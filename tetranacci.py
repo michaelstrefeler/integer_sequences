@@ -13,4 +13,14 @@ def tetranacci(n, output=[0, 0, 0], number=1):
     return output[:x]
 
 
-print(tetranacci(50))
+number = input('Choose a number (at least 5): ')
+try:
+    number = int(number)
+    if number < 5:
+        number = 5
+        print('I chose 5 for you because you can\'t follow instructions')
+except ValueError:
+    print('That was not a number. Try again later')
+    exit()
+
+print(tetranacci(number))
